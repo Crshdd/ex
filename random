@@ -13,6 +13,4 @@ sudo mv nuclei /usr/local/bin/
 
 feroxbuster
 sudo apt install feroxbuster
-
-
-└─$ feroxbuster -u ** -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -C 404,403 -t 100 -d 1 -x php,html -o results.txt
+feroxbuster -u ** -w /usr/share/seclists/Discovery/Web-Content/raft-medium-words.txt -C 404,403 -t 100 -d 1 -x php,html -o results.txt
