@@ -51,6 +51,12 @@ document.cookie  // Returns ALL cookies without HttpOnly
 
 
 
+OWASP ZAP
+# Option 1: Official installer (Linux)
+wget https://github.com/zaproxy/zaproxy/releases/latest/download/ZAP_Linux_Installer.sh
+chmod +x ZAP_Linux_Installer.sh
+./ZAP_Linux_Installer.sh
+
 
 
 
